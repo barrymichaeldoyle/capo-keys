@@ -1,7 +1,7 @@
 {
   "name": "capo-keys",
-  "version": "0.0.0",
-  "description": "A transposing tool for guitarists.",
+  "version": "1.0.0",
+  "description": "A transposing tool for helping guitarists work out where to place their capos.",
   "author": "Barry Michael Doyle",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
