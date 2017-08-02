@@ -11,12 +11,18 @@ class ChordsModal extends Component {
       modalStyle,
       containerStyle,
       buttonContainerStyle,
-      headerStyle
+      headerStyle,
+      contentStyle,
+      contentRowStyle,
+      itemContainerStyle,
+      itemHeadStyle,
+      itemStyle
     } = styles;
+
+    const { selectedValues: { selectedKeyIndex, selectedCapo }, keys } = this.props;
 
     return (
         <Modal
-          style={{ backgroundColor: 'yellow' }}
           transparent
           animationType={'slide'}
           visible={this.props.modal.chordsModalIsOpen}
@@ -30,7 +36,193 @@ class ChordsModal extends Component {
                 </Text>
               </View>
 
-              <View style={{ flex: 1 }} />
+              <View style={contentStyle}>
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={[itemStyle, itemHeadStyle]}>
+                      Key {keys[selectedKeyIndex].key} Chords
+                    </Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={[itemStyle, itemHeadStyle]}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={[itemStyle, itemHeadStyle]}>
+                      Capo {selectedCapo} Chords
+                    </Text>
+                  </View>
+                </View>
+
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>G</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>C</Text>
+                  </View>
+                </View>
+
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>G</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>C</Text>
+                  </View>
+                </View>
+
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>G</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>C</Text>
+                  </View>
+                </View>
+
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>G</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>C</Text>
+                  </View>
+                </View>
+
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>G</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>C</Text>
+                  </View>
+                </View>
+
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>G</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>C</Text>
+                  </View>
+                </View>
+
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>G</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>C</Text>
+                  </View>
+                </View>
+
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>G</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>C</Text>
+                  </View>
+                </View>
+
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>G</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>C</Text>
+                  </View>
+                </View>
+
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>G</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>C</Text>
+                  </View>
+                </View>
+
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>G</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>C</Text>
+                  </View>
+                </View>
+
+                <View style={contentRowStyle}>
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>G</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>⇒</Text>
+                  </View>
+
+                  <View style={itemContainerStyle}>
+                    <Text style={itemStyle}>C</Text>
+                  </View>
+                </View>
+              </View>
 
               <View style={buttonContainerStyle}>
                 <Button
@@ -69,11 +261,36 @@ const styles = {
     alignItems: 'center',
     backgroundColor: '#2169F3'
   },
+  contentStyle: {
+    flex: 1,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    marginBottom: 10
+  },
+  contentRowStyle: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  itemContainerStyle: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  itemHeadStyle: {
+    fontWeight: '900',
+    fontSize: 14
+  },
+  itemStyle: {
+    alignItems: 'center',
+    fontSize: 16
+  },
   buttonContainerStyle: {
     paddingBottom: 10
   }
 };
 
-const mapStateToProps = ({ modal }) => ({ modal });
+const mapStateToProps = ({ modal, selectedValues, keys }) => ({ modal, selectedValues, keys });
 
 export default connect(mapStateToProps, { closeChordsModal })(ChordsModal);
