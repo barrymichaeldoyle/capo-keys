@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Platform, Image } from 'react-native';
 import { Constants } from 'expo';
+import ChordsModal from '../components/ChordsModal';
 import KeysButtons from '../components/KeysButtons';
 import CapoButtons from '../components/CapoButtons';
 import CapoKey from '../components/CapoKey';
@@ -38,6 +39,8 @@ class MainScreen extends Component {
 
     return (
       <View style={{ flex: 1 }}>
+        <ChordsModal />
+
         <View style={containerStyle}>
           <KeysButtons />
           <CapoButtons />
@@ -58,6 +61,9 @@ const styles = {
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#ddd'
+  },
+  modalContainerStyle: {
+
   },
   adContainerStyle: {
     height: 50,

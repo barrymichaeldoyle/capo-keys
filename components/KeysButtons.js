@@ -6,8 +6,6 @@ import { selectKeyIndex } from '../actions';
 import { BUTTON_GROUP_STYLES } from '../style_constants';
 
 class KeysButtons extends Component {
-  onButtonPress = index => { this.props.selectKeyIndex(index); }
-  
   render() {
     const { selectedValues: { selectedKeyIndex }, keys } = this.props;
     const keyButtons = keys.map(key => (key.shortKey ? '/' : [key.key]));
@@ -23,7 +21,7 @@ class KeysButtons extends Component {
         <Text h3>Key</Text>
         <Text h1 style={{ marginBottom: 2 }}>{keys[selectedKeyIndex].key}</Text>
         <ButtonGroup
-          onPress={this.onButtonPress}
+          onPress={index => this.props.selectKeyIndex(index)}
           selectedIndex={selectedKeyIndex}
           buttons={keyButtons}
           containerStyle={containerStyle}
