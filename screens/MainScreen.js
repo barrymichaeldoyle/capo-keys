@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { View, Platform, Image, Text } from 'react-native';
+import { View, Platform, Image } from 'react-native';
 import { Constants } from 'expo';
 import KeysButtons from '../components/KeysButtons';
 import CapoButtons from '../components/CapoButtons';
 import CapoKey from '../components/CapoKey';
-import BottomBannerAd from '../components/BottomBannerAd';
+import ViewChordsButton from '../components/ViewChordsButton';
+//import BottomBannerAd from '../components/BottomBannerAd';
 import icon from '../assets/icons/pure-icon.png';
 import { SCREEN_WIDTH } from '../style_constants';
 
@@ -33,7 +34,7 @@ class MainScreen extends Component {
   });
 
   render() {
-    const { containerStyle, adContainerStyle, buttonStyle } = styles;
+    const { containerStyle, adContainerStyle, buttonContainerStyle } = styles;
 
     return (
       <View style={{ flex: 1 }}>
@@ -42,9 +43,10 @@ class MainScreen extends Component {
           <CapoButtons />
           <CapoKey />
         </View>
-        <View style={adContainerStyle}>
-          <Text>Banner add goes here</Text>
-        </View>
+
+        <ViewChordsButton style={buttonContainerStyle} />
+
+        <View style={adContainerStyle} />
       </View>
     );
   }
@@ -64,9 +66,21 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center'
   },
-  buttonStyle: {
-    width: SCREEN_WIDTH * 0.9
+  buttonContainerStyle: {
+    width: SCREEN_WIDTH,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 5,
+    backgroundColor: '#ddd'
   }
 };
 
 export default MainScreen;
+
+/*
+
+<KeysButtons />
+<CapoButtons />
+<CapoKey />
+
+*/
