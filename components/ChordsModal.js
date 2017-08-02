@@ -6,6 +6,42 @@ import { closeChordsModal } from '../actions';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../constants';
 
 class ChordsModal extends Component {
+  renderChordRows() {
+    const { contentRowStyle, itemContainerStyle, itemStyle } = styles;
+    const { selectedValues: { selectedKeyIndex, selectedCapo }, keys } = this.props;
+
+    let count = 0;
+
+    return keys.map(({ key }) => {
+      const keyChordIndex = (count + selectedKeyIndex) > 11 ?
+        (count + selectedKeyIndex) - 12 : (count + selectedKeyIndex);
+      const capoChordIndex = (keyChordIndex + selectedCapo) > 11 ?
+        (keyChordIndex + selectedCapo) - 12 : (keyChordIndex + selectedCapo);
+      
+      count++;
+      
+      return (
+        <View key={key} style={contentRowStyle}>
+          <View style={itemContainerStyle}>
+            <Text style={itemStyle}>
+              {keys[keyChordIndex].key}
+            </Text>
+          </View>
+
+          <View style={itemContainerStyle}>
+            <Text style={itemStyle}>⇒</Text>
+          </View>
+
+          <View style={itemContainerStyle}>
+            <Text style={itemStyle}>
+              {keys[capoChordIndex].key}
+            </Text>
+          </View>
+        </View>
+      );
+    });
+  }
+
   render() {
     const {
       modalStyle,
@@ -55,173 +91,8 @@ class ChordsModal extends Component {
                   </View>
                 </View>
 
-                <View style={contentRowStyle}>
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>G</Text>
-                  </View>
+                {this.renderChordRows()}
 
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>⇒</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>C</Text>
-                  </View>
-                </View>
-
-                <View style={contentRowStyle}>
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>G</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>⇒</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>C</Text>
-                  </View>
-                </View>
-
-                <View style={contentRowStyle}>
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>G</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>⇒</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>C</Text>
-                  </View>
-                </View>
-
-                <View style={contentRowStyle}>
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>G</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>⇒</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>C</Text>
-                  </View>
-                </View>
-
-                <View style={contentRowStyle}>
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>G</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>⇒</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>C</Text>
-                  </View>
-                </View>
-
-                <View style={contentRowStyle}>
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>G</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>⇒</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>C</Text>
-                  </View>
-                </View>
-
-                <View style={contentRowStyle}>
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>G</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>⇒</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>C</Text>
-                  </View>
-                </View>
-
-                <View style={contentRowStyle}>
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>G</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>⇒</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>C</Text>
-                  </View>
-                </View>
-
-                <View style={contentRowStyle}>
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>G</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>⇒</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>C</Text>
-                  </View>
-                </View>
-
-                <View style={contentRowStyle}>
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>G</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>⇒</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>C</Text>
-                  </View>
-                </View>
-
-                <View style={contentRowStyle}>
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>G</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>⇒</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>C</Text>
-                  </View>
-                </View>
-
-                <View style={contentRowStyle}>
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>G</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>⇒</Text>
-                  </View>
-
-                  <View style={itemContainerStyle}>
-                    <Text style={itemStyle}>C</Text>
-                  </View>
-                </View>
               </View>
 
               <View style={buttonContainerStyle}>
