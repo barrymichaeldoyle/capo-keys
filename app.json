@@ -11,7 +11,7 @@
     "icon": "./assets/icons/app-icon.png",
     "loading": {
       "icon": "./assets/icons/loading-icon.png",
-      "hideExponentText": false
+      "hideExponentText": true
     },
     "packagerOpts": {
       "assetExts": ["ttf", "mp4"]
