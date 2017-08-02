@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Platform, Image } from 'react-native';
+import { Divider } from 'react-native-elements';
 import ChordsModal from '../components/ChordsModal';
 import KeysButtons from '../components/KeysButtons';
 import CapoButtons from '../components/CapoButtons';
@@ -34,7 +35,7 @@ class MainScreen extends Component {
   });
 
   render() {
-    const { containerStyle, adContainerStyle, buttonContainerStyle } = styles;
+    const { containerStyle, adContainerStyle, buttonContainerStyle, dividerStyle } = styles;
 
     return (
       <View style={{ flex: 1 }}>
@@ -42,7 +43,9 @@ class MainScreen extends Component {
 
         <View style={containerStyle}>
           <KeysButtons />
+          <Divider style={dividerStyle} />
           <CapoButtons />
+          <Divider style={dividerStyle} />
           <CapoKey />
         </View>
 
@@ -74,6 +77,10 @@ const styles = {
     alignItems: 'center',
     paddingBottom: 5,
     backgroundColor: '#ddd'
+  },
+  dividerStyle: {
+    width: SCREEN_WIDTH * 0.9,
+    backgroundColor: '#2169F3'
   }
 };
 
