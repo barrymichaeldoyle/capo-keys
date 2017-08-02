@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { Text, ButtonGroup } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { selectCapo } from '../actions';
-import { BUTTON_GROUP_STYLES } from '../style_constants';
+import { BUTTON_GROUP_STYLES } from '../constants';
 
 const CAPO_POSITIONS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'];
 

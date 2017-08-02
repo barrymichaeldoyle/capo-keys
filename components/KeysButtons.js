@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { Text, ButtonGroup } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { selectKeyIndex } from '../actions';
-import { BUTTON_GROUP_STYLES } from '../style_constants';
+import { BUTTON_GROUP_STYLES } from '../constants';
 
 class KeysButtons extends Component {
   render() {

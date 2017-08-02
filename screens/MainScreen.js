@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Platform, Image } from 'react-native';
-import { Constants } from 'expo';
 import ChordsModal from '../components/ChordsModal';
 import KeysButtons from '../components/KeysButtons';
 import CapoButtons from '../components/CapoButtons';
@@ -8,17 +7,17 @@ import CapoKey from '../components/CapoKey';
 import ViewChordsButton from '../components/ViewChordsButton';
 //import BottomBannerAd from '../components/BottomBannerAd';
 import icon from '../assets/icons/pure-icon.png';
-import { SCREEN_WIDTH } from '../style_constants';
+import { SCREEN_WIDTH, STATUS_BAR_HEIGHT } from '../constants';
 
 class MainScreen extends Component {
   static navigationOptions = () => ({
     title: 'Capo Keys',
     headerStyle: {
-      height: Platform.OS === 'android' ? 54 + Constants.statusBarHeight : 54,
+      height: Platform.OS === 'android' ? 54 + STATUS_BAR_HEIGHT : 54,
       backgroundColor: '#2169F3'
     },
     headerTitleStyle: {
-      marginTop: Platform.OS === 'android' ? Constants.statusBarHeight : 0,
+      marginTop: Platform.OS === 'android' ? STATUS_BAR_HEIGHT : 0,
       color: 'white'
     },
     headerLeft: (
@@ -61,9 +60,6 @@ const styles = {
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#ddd'
-  },
-  modalContainerStyle: {
-
   },
   adContainerStyle: {
     height: 50,
