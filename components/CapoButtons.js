@@ -22,7 +22,7 @@ class CapoButtons extends Component {
     return (
       <View style={{ justifyContent: 'center', alignItems: 'center' }}>
         <Text h3>Capo</Text>
-        <Text h1 style={{ marginBottom: 10 }}>{selectedCapo}</Text>
+        <Text h1 style={{ marginBottom: 2 }}>{selectedCapo}</Text>
         <ButtonGroup
           onPress={this.onButtonPress}
           selectedIndex={selectedCapo - 1}
