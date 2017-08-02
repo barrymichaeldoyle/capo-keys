@@ -6,7 +6,7 @@ import KeysButtons from '../components/KeysButtons';
 import CapoButtons from '../components/CapoButtons';
 import CapoKey from '../components/CapoKey';
 import ViewChordsButton from '../components/ViewChordsButton';
-//import BottomBannerAd from '../components/BottomBannerAd';
+import BottomBannerAd from '../components/BottomBannerAd';
 import icon from '../assets/icons/pure-icon.png';
 import { SCREEN_WIDTH, STATUS_BAR_HEIGHT } from '../constants';
 
@@ -51,7 +51,7 @@ class MainScreen extends Component {
 
         <ViewChordsButton style={buttonContainerStyle} />
 
-        <View style={adContainerStyle} />
+        <BottomBannerAd />
       </View>
     );
   }
@@ -63,13 +63,6 @@ const styles = {
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#ddd'
-  },
-  adContainerStyle: {
-    height: 50,
-    backgroundColor: '#ccc',
-    width: SCREEN_WIDTH,
-    justifyContent: 'center',
-    alignItems: 'center'
   },
   buttonContainerStyle: {
     width: SCREEN_WIDTH,
