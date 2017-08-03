@@ -35,7 +35,7 @@ class MainScreen extends Component {
   });
 
   render() {
-    const { containerStyle, adContainerStyle, buttonContainerStyle, dividerStyle } = styles;
+    const { containerStyle, buttonContainerStyle, dividerStyle } = styles;
 
     return (
       <View style={{ flex: 1 }}>
@@ -78,11 +78,3 @@ const styles = {
 };
 
 export default MainScreen;
-
-/*
-
-<KeysButtons />
-<CapoButtons />
-<CapoKey />
-
-*/

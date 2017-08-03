@@ -155,7 +155,8 @@ const styles = {
   },
   itemStyle: {
     alignItems: 'center',
-    fontSize: 16
+    fontSize: 16,
+    textAlign: 'center'
   },
   buttonContainerStyle: {
     paddingBottom: 10
