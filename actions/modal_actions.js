@@ -12,7 +12,7 @@ export const openChordsModal = () => ({
 
 export const closeChordsModal = () => {
   FacebookAds.InterstitialAdManager.showAd('328225604270934_328677554225739')
-    .then(console.log('Banner ad clicked'))
+    .then(console.log('Intestitial Ad shown'))
     .catch(err => console.log('Interstitial Ad Error', err));
   return { type: CLOSE_CHORDS_MODAL, payload: false };
 };
