@@ -5,7 +5,7 @@
     "slug": "capo-keys",
     "privacy": "public",
     "sdkVersion": "19.0.0",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "primaryColor": "#2169F3",
     "icon": "./assets/icons/app-icon.png",
@@ -17,10 +17,13 @@
       "assetExts": ["ttf", "mp4"]
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "buildNumber": "2"
     },
     "android": {
-      "package": "com.barrymichaeldoyle.capokeys"
+      "package": "com.barrymichaeldoyle.capokeys",
+      "permissions": [],
+      "versionCode": 2
     }
   }
 }

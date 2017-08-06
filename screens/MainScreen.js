@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Platform, Image } from 'react-native';
 import { Divider } from 'react-native-elements';
+import Expo from 'expo';
 import ChordsModal from '../components/ChordsModal';
 import KeysButtons from '../components/KeysButtons';
 import CapoButtons from '../components/CapoButtons';
@@ -9,6 +10,16 @@ import ViewChordsButton from '../components/ViewChordsButton';
 import BottomBannerAd from '../components/BottomBannerAd';
 import icon from '../assets/icons/pure-icon.png';
 import { SCREEN_WIDTH, STATUS_BAR_HEIGHT } from '../constants';
+
+function cacheImages(images) {
+  return images.map(image => {
+    if (typeof image === 'string') {
+      return Image.prefetch(image);
+    }
+    
+    return Expo.Asset.fromModule(image).downloadAsync();
+  });
+}
 
 class MainScreen extends Component {
   static navigationOptions = () => ({
@@ -34,11 +45,25 @@ class MainScreen extends Component {
     ),
   });
 
+  state = {
+    appIsReady: false
+  }
+
+  componentWilMount() {
+    this._loadAssetsAsync();
+  }
+
+  async _loadAssetsAsync() {
+    const imageAssets = cacheImages([icon]);
+    await Promise.all([...imageAssets]);
+    this.setState({ appIsReady: true });
+  }
+
   render() {
     const { containerStyle, buttonContainerStyle, dividerStyle } = styles;
 
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: '#ddd' }}>
         <ChordsModal />
 
         <View style={containerStyle}>
@@ -62,14 +87,12 @@ const styles = {
     flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#ddd'
   },
   buttonContainerStyle: {
     width: SCREEN_WIDTH,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingBottom: 5,
-    backgroundColor: '#ddd'
+    paddingBottom: 10,
   },
   dividerStyle: {
     width: SCREEN_WIDTH * 0.9,
