@@ -1,0 +1,43 @@
+[
+  {
+    "key": "C"
+  },
+  {
+    "key": "C♯ /  D♭",
+    "shortKey": true
+  },
+  {
+    "key": "D"
+  },
+  {
+    "key": "D♯ /  E♭",
+    "shortKey": true
+  },
+  {
+    "key": "E"
+  },
+  {
+    "key": "F"
+  },
+  {
+    "key": "F♯ /  G♭",
+    "shortKey": true
+  },
+  {
+    "key": "G"
+  },
+  {
+    "key": "G♯ /  A♭",
+    "shortKey": true
+  },
+  {
+    "key": "A"
+  },
+  {
+    "key": "A♯ /  B♭",
+    "shortKey": true
+  },
+  {
+    "key": "B"
+  }
+]
