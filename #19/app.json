@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Capo Keys",
+    "description": "A transposing tool for helping guitarists work out where to place their capos.",
+    "slug": "capo-keys",
+    "privacy": "public",
+    "sdkVersion": "20.0.0",
+    "version": "1.1.0",
+    "orientation": "portrait",
+    "primaryColor": "#2196F3",
+    "icon": "./assets/icons/app-icon.png",
+    "loading": {
+      "icon": "./assets/icons/loading-icon.png",
+      "hideExponentText": true
+    },
+    "packagerOpts": {
+      "assetExts": ["ttf", "mp4"]
+    },
+    "ios": {
+      "supportsTablet": true,
+      "buildNumber": "3"
+    },
+    "android": {
+      "package": "com.barrymichaeldoyle.capokeys",
+      "permissions": [],
+      "versionCode": 3
+    }
+  }
+}

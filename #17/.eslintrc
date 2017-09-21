@@ -1,0 +1,6 @@
+{
+  "extends": "eslint-config-rallycoding",
+  "rules": {
+    "no-underscore-dangle": 0
+  }
+}
